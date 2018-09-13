@@ -21,7 +21,7 @@ import javax.persistence.TemporalType;
 @Entity
 @Table(name="tbl_person")
 @Inheritance(strategy = InheritanceType.JOINED)
-public class Person implements Serializable
+public class Customer implements Serializable
 {
     private static final long serialVersionUID = 1L;
     @Id
@@ -43,11 +43,11 @@ public class Person implements Serializable
     @ManyToMany(cascade = CascadeType.ALL)
     private List<Address> addresses = new ArrayList();
     
-    public Person()
+    public Customer()
     {
     }
 
-    public Person(String firstName, String lastName, int age)
+    public Customer(String firstName, String lastName, int age)
     {
         this.firstName = firstName;
         this.lastName = lastName;
@@ -143,11 +143,11 @@ public class Person implements Serializable
     public boolean equals(Object object)
     {
         // TODO: Warning - this method won't work in the case the id fields are not set
-        if (!(object instanceof Person))
+        if (!(object instanceof Customer))
         {
             return false;
         }
-        Person other = (Person) object;
+        Customer other = (Customer) object;
         if ((this.id == null && other.id != null) || (this.id != null && !this.id.equals(other.id)))
         {
             return false;

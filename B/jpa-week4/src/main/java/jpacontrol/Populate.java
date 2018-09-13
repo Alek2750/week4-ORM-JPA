@@ -2,7 +2,7 @@ package jpacontrol;
 
 import entity.Address;
 import entity.BallPlayer;
-import entity.Person;
+import entity.Customer;
 import javax.persistence.EntityManager;
 import javax.persistence.EntityManagerFactory;
 import javax.persistence.Persistence;

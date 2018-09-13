@@ -22,7 +22,7 @@ public class Address implements Serializable
     private String city;
     
     @ManyToMany(mappedBy = "addresses")
-    private List<Person> persons = new ArrayList();
+    private List<Customer> persons = new ArrayList();
     
 
     
@@ -69,17 +69,17 @@ public class Address implements Serializable
         this.city = city;
     }
 
-    public List<Person> getPersons()
+    public List<Customer> getPersons()
     {
         return persons;
     }
 
-    public void setPersons(List<Person> persons)
+    public void setPersons(List<Customer> persons)
     {
         this.persons = persons;
     }
 
-    public void addPerson(Person person)
+    public void addPerson(Customer person)
     {
         this.persons.add(person);
     }

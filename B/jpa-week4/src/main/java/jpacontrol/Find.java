@@ -1,6 +1,6 @@
 package jpacontrol;
 
-import entity.Person;
+import entity.Customer;
 import javax.persistence.EntityManager;
 import javax.persistence.EntityManagerFactory;
 import javax.persistence.Persistence;
@@ -16,7 +16,7 @@ public class Find
         
         em.getTransaction().begin();
         
-        System.out.println("PersonFound: " + em.find(Person.class, 1l));
+        System.out.println("PersonFound: " + em.find(Customer.class, 1l));
         
         em.getTransaction().commit();
         em.close();

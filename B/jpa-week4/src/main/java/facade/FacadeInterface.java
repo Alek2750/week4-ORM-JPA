@@ -1,6 +1,6 @@
 package facade;
 
-import entity.Person;
+import entity.Customer;
 import javax.persistence.EntityManager;
 import javax.persistence.EntityManagerFactory;
 
@@ -8,8 +8,8 @@ interface FacadeInterface
 {
     public void addEntityManagerFactory(EntityManagerFactory emf);        
     public EntityManager getEntityManager();
-    public Person createPerson(Person p);
-    public Person getPerson(Long id);
-    public Person editPerson(Person p);
-    public Person deletePerson(Person p);
+    public Customer createPerson(Customer p);
+    public Customer getPerson(Long id);
+    public Customer editPerson(Customer p);
+    public Customer deletePerson(Customer p);
 }

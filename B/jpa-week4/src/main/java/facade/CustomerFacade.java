@@ -1,14 +1,14 @@
 package facade;
 
-import entity.Person;
+import entity.Customer;
 import javax.persistence.EntityManager;
 import javax.persistence.EntityManagerFactory;
 
-public class Facade implements FacadeInterface
+public class CustomerFacade implements FacadeInterface
 {
     EntityManagerFactory emf;
     
-    public Facade()
+    public CustomerFacade()
     {
     }
     
@@ -25,7 +25,7 @@ public class Facade implements FacadeInterface
     }
     
     @Override
-    public Person createPerson(Person person)
+    public Customer createPerson(Customer person)
     {
         EntityManager em = getEntityManager();
         
@@ -43,16 +43,16 @@ public class Facade implements FacadeInterface
     }
     
     @Override
-    public Person getPerson(Long id)
+    public Customer getPerson(Long id)
     {
         EntityManager em = getEntityManager();
         
-        Person p = null;
+        Customer p = null;
         
         try
         {
             em.getTransaction().begin();
-            p = em.find(Person.class, id);
+            p = em.find(Customer.class, id);
             em.getTransaction().commit();
             return p;
         }
@@ -63,16 +63,16 @@ public class Facade implements FacadeInterface
     }
     
     @Override
-    public Person editPerson(Person person)
+    public Customer editPerson(Customer person)
     {
         EntityManager em = getEntityManager();
         
-        Person p = null;
+        Customer p = null;
         
         try
         {
             em.getTransaction().begin();
-            p = em.find(Person.class, person.getId());
+            p = em.find(Customer.class, person.getId());
             if(p != null)
             {
                 em.merge(p);
@@ -87,16 +87,16 @@ public class Facade implements FacadeInterface
     }
 
     @Override
-    public Person deletePerson(Person person)
+    public Customer deletePerson(Customer person)
     {
         EntityManager em = getEntityManager();
         
-        Person p = null;
+        Customer p = null;
         
         try
         {
             em.getTransaction().begin();
-            p = em.find(Person.class, person.getId());
+            p = em.find(Customer.class, person.getId());
             if(p != null)
             {
                 em.remove(p);
